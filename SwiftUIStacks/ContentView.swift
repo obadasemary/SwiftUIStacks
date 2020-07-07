@@ -8,6 +8,25 @@
 
 import SwiftUI
 
+struct AppView: View {
+    var body: some View {
+        TabView {
+            ContentView()
+                .tabItem {
+                    Text("Plan")
+                    Image(systemName: "paperplane.fill")
+            }
+        }
+    }
+}
+
+struct TabBar_Previews: PreviewProvider {
+    static var previews: some View {
+        AppView()
+    }
+}
+
+
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -84,9 +103,6 @@ struct PricingView: View {
 
     var body: some View {
         VStack {
-//            Image(systemName: icon ?? "")
-//                .font(.largeTitle)
-//                .foregroundColor(textColor)
             icon.map({
                 Image(systemName: $0)
                     .font(.largeTitle)
