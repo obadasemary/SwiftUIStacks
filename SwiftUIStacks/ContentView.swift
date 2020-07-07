@@ -10,42 +10,54 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            HeaderView()
+        ZStack {
+            PricingView(icon: "gamecontroller.fill", title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
+                .padding()
+                .offset(x: 0, y: -220)
 
-            HStack(spacing: 15) {
-                PricingView(title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
+            PricingView(icon: "bolt.fill", title: "Pro", price: "$19", textColor: .white, bgColor: Color(red: 255/255, green: 183/255, blue: 37/255))
+                .padding()
+                .offset(x: 0, y: -110)
 
-                ZStack {
-                    PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+            PricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 62/255, green: 63/255, blue: 70/255))
+                .padding()
 
-                    Text("Best for designer")
-                        .font(.system(.caption, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(5)
-                        .background(Color(red: 255/255, green: 183/255, blue: 37/255))
-                        .cornerRadius(10)
-                        .offset(x: 0, y: 87)
-                }
-            }
-            .padding(.horizontal)
 
-            ZStack {
-                PricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 62/255, green: 63/255, blue: 70/255))
-                    .padding()
+            //            HeaderView()
 
-                Text("Perfect for teams with 20 members")
-                    .font(.system(.caption, design: .rounded))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(5)
-                    .background(Color(red: 255/255, green: 183/255, blue: 37/255))
-                    .cornerRadius(10)
-                    .offset(x: 0, y: 105)
-            }
+            //            HStack(spacing: 15) {
+            //                PricingView(title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
+            //
+            //                ZStack {
+            //                    PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+            //
+            //                    Text("Best for designer")
+            //                        .font(.system(.caption, design: .rounded))
+            //                        .fontWeight(.bold)
+            //                        .foregroundColor(.white)
+            //                        .padding(5)
+            //                        .background(Color(red: 255/255, green: 183/255, blue: 37/255))
+            //                        .cornerRadius(10)
+            //                        .offset(x: 0, y: 87)
+            //                }
+            //            }
+            //            .padding(.horizontal)
 
-            Spacer()
+            //            ZStack {
+            //                PricingView(icon: "wand.and.rays", title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 62/255, green: 63/255, blue: 70/255))
+            //                    .padding()
+            //
+            //                Text("Perfect for teams with 20 members")
+            //                    .font(.system(.caption, design: .rounded))
+            //                    .fontWeight(.bold)
+            //                    .foregroundColor(.white)
+            //                    .padding(5)
+            //                    .background(Color(red: 255/255, green: 183/255, blue: 37/255))
+            //                    .cornerRadius(10)
+            //                    .offset(x: 0, y: 105)
+            //            }
+            //
+//            Spacer()
         }
     }
 }
@@ -84,9 +96,9 @@ struct PricingView: View {
 
     var body: some View {
         VStack {
-//            Image(systemName: icon ?? "")
-//                .font(.largeTitle)
-//                .foregroundColor(textColor)
+            //            Image(systemName: icon ?? "")
+            //                .font(.largeTitle)
+            //                .foregroundColor(textColor)
             icon.map({
                 Image(systemName: $0)
                     .font(.largeTitle)
@@ -102,8 +114,10 @@ struct PricingView: View {
             Text("per month")
                 .font(.headline)
                 .foregroundColor(textColor)
+
+            Spacer()
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 100)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 200, maxHeight: 300)
         .padding(40)
         .background(bgColor)
         .cornerRadius(10)
