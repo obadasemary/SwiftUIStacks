@@ -25,6 +25,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(5)
                         .background(Color(red: 255/255, green: 183/255, blue: 37/255))
+                        .cornerRadius(10)
                         .offset(x: 0, y: 87)
                 }
             }
@@ -40,6 +41,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding(5)
                     .background(Color(red: 255/255, green: 183/255, blue: 37/255))
+                    
                     .offset(x: 0, y: 105)
             }
 
